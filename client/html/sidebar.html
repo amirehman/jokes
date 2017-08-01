@@ -1,0 +1,26 @@
+<template name="sidebar">
+    <aside class="sidebar-left">
+        <img src="logo.png" class="icon" />
+        
+        <a href="/" class="company-logo"> JEST </a>
+        <div class="sidebar-links">
+
+          {{#if currentUser}}
+            <a href="/profile" class="link-red" id="profile-link"><i class="fa fa-user"></i> User</a>
+          {{else}}
+          {{/if}}
+           
+            <a href="/jokes" class="link-blue" id="jokes-link"><i class="fa fa-comments-o"></i> Jokes</a>
+            <a href="/rankings" class="link-yellow" id="ranking-link"><i class="fa fa-trophy"></i> Ranking</a>
+            <a href="/search" class="link-green" id="search-link"><i class="fa fa-search"></i> Search</a>
+            
+          {{#if currentUser}}
+            <a href="#" class="link-purple logout" id="logout-link"><i class="fa fa-sign-out"></i> Logout</a>
+          {{else}}
+            <a href="/login" class="link-purple login" id="login-link"><i class="fa fa-sign-in"></i> Login</a>
+          {{/if}}
+           
+                                 
+        </div>
+    </aside>
+</template>

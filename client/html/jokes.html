@@ -1,0 +1,33 @@
+<template name="jokes">
+
+    {{> jokeForm}}
+
+   
+   {{#each jokes}}
+    <div class="joke">
+        <div class="row">
+            <div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+                <div class="joke-title">{{jokeName}}</div>
+                <p class="meta">Autor: {{author}}</p>
+                <p class="meta">Posted On: {{date}}</p>
+            </div>
+            <div class=".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0" id="vote">
+                <img src="laugh.png" class="smiley" id="laugh">
+                <img src="frown.png" class="smiley" id="frown">
+                <img src="puke.png" class="smiley" id="puke">
+            </div>
+            <div class="row" id="score">
+                <h3 class="count red block">{{laughScore}}</h3>
+                <h3 class="count yellow block">{{frownScore}}</h3>
+                <h3 class="count green block">{{pukeScore}}</h3>
+            </div>
+        </div>        
+
+        <p class="regular joke-desc">"{{jokePost}}"</p>
+    </div>  
+    {{else}}
+    <h3>No jokes to display.</h3>
+    {{/each}}
+    
+
+</template>
